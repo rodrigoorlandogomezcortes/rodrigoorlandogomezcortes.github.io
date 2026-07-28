@@ -1951,4 +1951,14 @@ img {
   .modal-dialog {
     padding: 28px 22px 22px;
   }
+
+  .site-header .header-logo {
+  display: block;
+  width: 75px;
+  height: 55px;
+  max-width: 75px;
+  max-height: 55px;
+  object-fit: contain;
+  flex: 0 0 75px;
+}
 }
