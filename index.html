@@ -8,1326 +8,1405 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Portafolio | Rodrigo Gómez</title>
+  <meta
+    name="description"
+    content="Portafolio de Rodrigo Gómez: sitios web, automatizaciones, sistemas internos, diseño y productos corporativos."
+  >
 
-  <style>
-    :root {
-      --background: #f4f6f8;
-      --surface: #ffffff;
-      --surface-dark: #111827;
-      --text: #172033;
-      --text-light: #667085;
-      --border: #e4e7ec;
-      --primary: #1272d6;
-      --primary-soft: #eaf4ff;
-      --success: #16a34a;
-      --warning: #f59e0b;
-      --radius: 18px;
-      --shadow: 0 12px 35px rgba(17, 24, 39, 0.08);
-    }
+  <title>Rodrigo Gómez | Soluciones digitales y creativas</title>
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family:
-        Inter,
-        Arial,
-        Helvetica,
-        sans-serif;
-    }
-
-    button,
-    a {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    /* Menú */
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(228, 231, 236, 0.9);
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(14px);
-    }
-
-    .navbar-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: var(--primary);
-      color: white;
-      font-weight: 800;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .nav-links a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    /* Presentación */
-
-    .hero {
-      padding: 90px 0 70px;
-      background:
-        radial-gradient(
-          circle at top right,
-          rgba(18, 114, 214, 0.14),
-          transparent 35%
-        ),
-        var(--surface);
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 22px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .hero h1 {
-      max-width: 850px;
-      margin: 0;
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.02;
-      letter-spacing: -0.045em;
-    }
-
-    .hero h1 span {
-      color: var(--primary);
-    }
-
-    .hero-description {
-      max-width: 720px;
-      margin: 28px 0 0;
-      color: var(--text-light);
-      font-size: 19px;
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
-    }
-
-    .button {
-      min-height: 46px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 20px;
-      border: 1px solid transparent;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .button-primary {
-      background: var(--primary);
-      color: white;
-    }
-
-    .button-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(18, 114, 214, 0.25);
-    }
-
-    .button-secondary {
-      border-color: var(--border);
-      background: white;
-      color: var(--text);
-    }
-
-    .button-secondary:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    /* Resumen */
-
-    .summary {
-      padding: 34px 0;
-      background: var(--surface-dark);
-      color: white;
-    }
-
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .summary-item strong {
-      display: block;
-      margin-bottom: 7px;
-      font-size: 28px;
-    }
-
-    .summary-item span {
-      color: #aeb8c8;
-      font-size: 14px;
-    }
-
-    /* Portafolio */
-
-    .portfolio {
-      padding: 85px 0;
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 34px;
-    }
-
-    .section-heading h2 {
-      margin: 0 0 12px;
-      font-size: clamp(31px, 5vw, 46px);
-      letter-spacing: -0.03em;
-    }
-
-    .section-heading p {
-      max-width: 680px;
-      margin: 0;
-      color: var(--text-light);
-      line-height: 1.6;
-    }
-
-    /* Filtros */
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 34px;
-    }
-
-    .filter-button {
-      padding: 11px 16px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: white;
-      color: var(--text-light);
-      font-size: 14px;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .filter-button:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    .filter-button.active {
-      border-color: var(--primary);
-      background: var(--primary);
-      color: white;
-    }
-
-    /* Proyectos */
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .project-card {
-      min-width: 0;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(17, 24, 39, 0.13);
-    }
-
-    .project-card.hidden {
-      display: none;
-    }
-
-    .project-preview {
-      min-height: 210px;
-      display: flex;
-      align-items: flex-end;
-      position: relative;
-      padding: 24px;
-      overflow: hidden;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(18, 114, 214, 0.95),
-          rgba(28, 50, 86, 0.98)
-        );
-      color: white;
-    }
-
-    .project-preview::before {
-      content: "";
-      width: 180px;
-      height: 180px;
-      position: absolute;
-      top: -75px;
-      right: -50px;
-      border: 26px solid rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-    }
-
-    .project-preview::after {
-      content: "";
-      width: 80px;
-      height: 80px;
-      position: absolute;
-      right: 30px;
-      bottom: -40px;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.1);
-      transform: rotate(18deg);
-    }
-
-    .project-icon {
-      position: relative;
-      z-index: 1;
-      font-size: 44px;
-    }
-
-    .project-body {
-      padding: 24px;
-    }
-
-    .project-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .project-category {
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .status {
-      padding: 6px 9px;
-      border-radius: 999px;
-      background: #ecfdf3;
-      color: var(--success);
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .status.private {
-      background: #fff7e8;
-      color: #b46900;
-    }
-
-    .project-body h3 {
-      margin: 0 0 12px;
-      font-size: 22px;
-    }
-
-    .project-description {
-      min-height: 72px;
-      margin: 0;
-      color: var(--text-light);
-      font-size: 14px;
-      line-height: 1.65;
-    }
-
-    .technologies {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 20px;
-    }
-
-    .technology {
-      padding: 6px 9px;
-      border-radius: 8px;
-      background: #f2f4f7;
-      color: #475467;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .project-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 24px;
-    }
-
-    .project-link {
-      flex: 1;
-      min-height: 42px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: white;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .project-link:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    .project-link.primary {
-      border-color: var(--primary);
-      background: var(--primary);
-      color: white;
-    }
-
-    /* Contacto */
-
-    .contact {
-      padding: 80px 0;
-      background: var(--surface);
-    }
-
-    .contact-box {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 40px;
-      align-items: center;
-      padding: 48px;
-      border-radius: 26px;
-      background: var(--surface-dark);
-      color: white;
-    }
-
-    .contact-box h2 {
-      margin: 0 0 16px;
-      font-size: 38px;
-    }
-
-    .contact-box p {
-      margin: 0;
-      color: #b7c0cf;
-      line-height: 1.7;
-    }
-
-    .contact-action {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    footer {
-      padding: 32px 20px;
-      text-align: center;
-      color: var(--text-light);
-      font-size: 14px;
-    }
-
-    /* Responsive */
-
-    @media (max-width: 950px) {
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .summary-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .contact-box {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-action {
-        justify-content: flex-start;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .container {
-        width: min(100% - 28px, 1180px);
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding: 65px 0 55px;
-      }
-
-      .hero h1 {
-        font-size: 44px;
-      }
-
-      .hero-description {
-        font-size: 17px;
-      }
-
-      .summary-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-heading {
-        display: block;
-      }
-
-      .contact-box {
-        padding: 32px 24px;
-      }
-
-      .contact-box h2 {
-        font-size: 30px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <div class="container navbar-inner">
+  <header class="site-header">
+    <div class="container header-content">
 
-      <a class="brand" href="#">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
         <span class="brand-mark">RG</span>
-        <span>Rodrigo Gómez</span>
+
+        <span class="brand-text">
+          Rodrigo Gómez
+        </span>
       </a>
 
-      <div class="nav-links">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav
+        class="main-navigation"
+        id="main-navigation"
+        aria-label="Navegación principal"
+      >
+        <a href="#servicios">Servicios</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#contacto">Contacto</a>
-      </div>
+      </nav>
 
-    </div>
-  </nav>
-
-  <header class="hero" id="sobre-mi">
-    <div class="container">
-      <div class="hero-content">
-
-        <span class="eyebrow">
-          Tecnología · Procesos · Diseño
-        </span>
-
-        <h1>
-          Soluciones digitales que
-          <span>simplifican el trabajo.</span>
-        </h1>
-
-        <p class="hero-description">
-          Desarrollo sistemas internos, automatizaciones, sitios web,
-          integraciones y piezas visuales orientadas a resolver necesidades
-          reales de operación, gestión y comunicación.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button button-primary" href="#proyectos">
-            Ver proyectos
-          </a>
-
-          <a class="button button-secondary" href="#contacto">
-            Contacto
-          </a>
-        </div>
-
-      </div>
     </div>
   </header>
 
-  <section class="summary">
-    <div class="container summary-grid">
+  <main>
 
-      <div class="summary-item">
-        <strong>6</strong>
-        <span>Áreas de trabajo</span>
+    <!-- Presentación principal -->
+
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <span class="eyebrow">
+            Desarrollo · Automatización · Diseño
+          </span>
+
+          <h1>
+            Soluciones digitales y creativas para
+            <span>hacer crecer tu empresa.</span>
+          </h1>
+
+          <p class="hero-description">
+            Desarrollo sitios web, plugins personalizados, automatizaciones,
+            sistemas internos y soluciones visuales adaptadas a las necesidades
+            reales de cada organización.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              class="button button-primary"
+              href="#servicios"
+            >
+              Ver servicios
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="#proyectos"
+            >
+              Conocer proyectos
+            </a>
+
+          </div>
+
+          <div class="hero-points">
+
+            <span>Soluciones personalizadas</span>
+            <span>Procesos más simples</span>
+            <span>Diseño funcional</span>
+
+          </div>
+
+        </div>
+
+        <div
+          class="hero-visual"
+          aria-label="Representación de servicios digitales"
+        >
+
+          <div class="visual-window">
+
+            <div class="visual-toolbar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="visual-content">
+
+              <div class="visual-title">
+                <span class="visual-title-line large"></span>
+                <span class="visual-title-line"></span>
+              </div>
+
+              <div class="visual-grid">
+
+                <div class="visual-card">
+                  <span class="visual-icon">01</span>
+                  <strong>Sitios web</strong>
+                  <small>Diseño y desarrollo</small>
+                </div>
+
+                <div class="visual-card">
+                  <span class="visual-icon">02</span>
+                  <strong>Automatización</strong>
+                  <small>Procesos más rápidos</small>
+                </div>
+
+                <div class="visual-card wide">
+                  <span class="visual-icon">03</span>
+                  <strong>Sistemas internos</strong>
+                  <small>Herramientas para la operación</small>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
+    </section>
 
-      <div class="summary-item">
-        <strong>15+</strong>
-        <span>Proyectos y soluciones</span>
+    <!-- Resumen -->
+
+    <section class="summary">
+      <div class="container summary-grid">
+
+        <div class="summary-item">
+          <strong>Web</strong>
+          <span>Sitios y plugins personalizados</span>
+        </div>
+
+        <div class="summary-item">
+          <strong>Automatización</strong>
+          <span>Procesos, reportes e integraciones</span>
+        </div>
+
+        <div class="summary-item">
+          <strong>Sistemas</strong>
+          <span>Herramientas internas y operacionales</span>
+        </div>
+
+        <div class="summary-item">
+          <strong>Diseño</strong>
+          <span>Identidad y productos corporativos</span>
+        </div>
+
       </div>
+    </section>
 
-      <div class="summary-item">
-        <strong>Web</strong>
-        <span>Sistemas e intranets</span>
-      </div>
+    <!-- Servicios -->
 
-      <div class="summary-item">
-        <strong>API</strong>
-        <span>Integraciones y automatización</span>
-      </div>
+    <section class="services section" id="servicios">
+      <div class="container">
 
-    </div>
-  </section>
+        <div class="section-heading">
 
-  <main class="portfolio" id="proyectos">
-    <div class="container">
+          <span class="section-label">
+            Servicios
+          </span>
 
-      <div class="section-heading">
-        <div>
-          <h2>Proyectos y trabajos</h2>
+          <h2>
+            ¿Qué puedo desarrollar para tu empresa?
+          </h2>
 
           <p>
-            Explora los proyectos por categoría. Más adelante cada uno
-            podrá incluir capturas, videos, documentación o una demostración
-            interactiva.
+            Soluciones pensadas para mejorar la presencia digital,
+            automatizar tareas, ordenar procesos internos y fortalecer
+            la identidad de una organización.
           </p>
+
         </div>
+
+        <div class="services-grid">
+
+          <button
+            class="service-card"
+            type="button"
+            data-service-filter="web"
+          >
+            <span class="service-number">01</span>
+
+            <div class="service-icon" aria-hidden="true">
+              WEB
+            </div>
+
+            <h3>Sitios web</h3>
+
+            <p>
+              Sitios corporativos, landing pages, portales,
+              formularios y plugins personalizados.
+            </p>
+
+            <span class="service-action">
+              Ver proyectos
+              <span aria-hidden="true">→</span>
+            </span>
+          </button>
+
+          <button
+            class="service-card"
+            type="button"
+            data-service-filter="automatizaciones"
+          >
+            <span class="service-number">02</span>
+
+            <div class="service-icon" aria-hidden="true">
+              AUTO
+            </div>
+
+            <h3>Automatizaciones</h3>
+
+            <p>
+              Reportes automáticos, alertas, cruces de datos
+              e integración de herramientas.
+            </p>
+
+            <span class="service-action">
+              Ver proyectos
+              <span aria-hidden="true">→</span>
+            </span>
+          </button>
+
+          <button
+            class="service-card"
+            type="button"
+            data-service-filter="sistemas"
+          >
+            <span class="service-number">03</span>
+
+            <div class="service-icon" aria-hidden="true">
+              SYS
+            </div>
+
+            <h3>Sistemas internos</h3>
+
+            <p>
+              Intranet, gestión de personal, bodega,
+              materiales y control operacional.
+            </p>
+
+            <span class="service-action">
+              Ver proyectos
+              <span aria-hidden="true">→</span>
+            </span>
+          </button>
+
+          <button
+            class="service-card"
+            type="button"
+            data-service-filter="diseno"
+          >
+            <span class="service-number">04</span>
+
+            <div class="service-icon" aria-hidden="true">
+              DSGN
+            </div>
+
+            <h3>Diseño y productos</h3>
+
+            <p>
+              Identidad visual, contenido digital y productos
+              corporativos personalizados.
+            </p>
+
+            <span class="service-action">
+              Ver proyectos
+              <span aria-hidden="true">→</span>
+            </span>
+          </button>
+
+        </div>
+
       </div>
+    </section>
 
-      <div class="filters" aria-label="Filtrar proyectos">
+    <!-- Proyectos -->
 
-        <button
-          class="filter-button active"
-          type="button"
-          data-filter="todos"
-        >
-          Todos
-        </button>
+    <section class="projects section" id="proyectos">
+      <div class="container">
 
-        <button
-          class="filter-button"
-          type="button"
-          data-filter="sistemas"
-        >
-          Sistemas e intranet
-        </button>
+        <div class="section-heading projects-heading">
 
-        <button
-          class="filter-button"
-          type="button"
-          data-filter="scripts"
-        >
-          Google Apps Script
-        </button>
+          <div>
+            <span class="section-label">
+              Portafolio
+            </span>
 
-        <button
-          class="filter-button"
-          type="button"
-          data-filter="web"
-        >
-          Sitios web
-        </button>
+            <h2>Proyectos y soluciones</h2>
 
-        <button
-          class="filter-button"
-          type="button"
-          data-filter="automatizacion"
-        >
-          Automatizaciones
-        </button>
-
-        <button
-          class="filter-button"
-          type="button"
-          data-filter="diseno"
-        >
-          Diseño y marketing
-        </button>
-
-        <button
-          class="filter-button"
-          type="button"
-          data-filter="infraestructura"
-        >
-          Infraestructura TI
-        </button>
-
-      </div>
-
-      <section class="projects-grid">
-
-        <!-- Sistemas e intranet -->
-
-        <article class="project-card" data-category="sistemas">
-
-          <div class="project-preview">
-            <span class="project-icon">👥</span>
-          </div>
-
-          <div class="project-body">
-
-            <div class="project-top">
-              <span class="project-category">
-                Sistemas e intranet
-              </span>
-
-              <span class="status private">
-                Uso interno
-              </span>
-            </div>
-
-            <h3>Sistema de personal</h3>
-
-            <p class="project-description">
-              Plataforma interna para gestionar información de trabajadores,
-              inasistencias, bonos, documentación y procesos administrativos.
+            <p>
+              Selecciona una categoría para explorar los distintos
+              tipos de trabajos desarrollados.
             </p>
-
-            <div class="technologies">
-              <span class="technology">WordPress</span>
-              <span class="technology">PHP</span>
-              <span class="technology">MySQL</span>
-              <span class="technology">BUK API</span>
-            </div>
-
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver proyecto
-              </a>
-            </div>
-
-          </div>
-        </article>
-
-        <article class="project-card" data-category="sistemas">
-
-          <div class="project-preview">
-            <span class="project-icon">📅</span>
           </div>
 
-          <div class="project-body">
-
-            <div class="project-top">
-              <span class="project-category">
-                Sistemas e intranet
-              </span>
-
-              <span class="status private">
-                Uso interno
-              </span>
-            </div>
-
-            <h3>Calendario operacional</h3>
-
-            <p class="project-description">
-              Sistema para planificar visitas, asignar instalaciones,
-              controlar calendarios y revisar cumplimiento operacional.
-            </p>
-
-            <div class="technologies">
-              <span class="technology">WordPress</span>
-              <span class="technology">PHP</span>
-              <span class="technology">Monday.com</span>
-              <span class="technology">FieldBeat</span>
-            </div>
-
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver proyecto
-              </a>
-            </div>
-
-          </div>
-        </article>
-
-        <article class="project-card" data-category="sistemas">
-
-          <div class="project-preview">
-            <span class="project-icon">📋</span>
+          <div class="project-counter" aria-live="polite">
+            <strong id="visible-projects">12</strong>
+            <span>proyectos visibles</span>
           </div>
 
-          <div class="project-body">
+        </div>
 
-            <div class="project-top">
-              <span class="project-category">
-                Sistemas e intranet
-              </span>
+        <div
+          class="filters"
+          role="group"
+          aria-label="Filtrar proyectos"
+        >
 
-              <span class="status private">
-                Uso interno
-              </span>
-            </div>
+          <button
+            class="filter-button active"
+            type="button"
+            data-filter="todos"
+          >
+            Todos
+          </button>
 
-            <h3>Control de volantes</h3>
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="web"
+          >
+            Sitios web
+          </button>
 
-            <p class="project-description">
-              Aplicación para revisar volantes diarios, asignar personal,
-              buscar fechas y controlar registros operacionales.
-            </p>
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="automatizaciones"
+          >
+            Automatizaciones
+          </button>
 
-            <div class="technologies">
-              <span class="technology">PHP</span>
-              <span class="technology">JavaScript</span>
-              <span class="technology">WordPress</span>
-            </div>
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="sistemas"
+          >
+            Sistemas internos
+          </button>
 
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver proyecto
-              </a>
-            </div>
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="diseno"
+          >
+            Diseño y productos
+          </button>
 
-          </div>
-        </article>
+        </div>
 
-        <!-- Google Apps Script -->
+        <div class="projects-grid">
 
-        <article class="project-card" data-category="scripts">
+          <!-- Sitios web -->
 
-          <div class="project-preview">
-            <span class="project-icon">📊</span>
-          </div>
+          <article
+            class="project-card"
+            data-category="web"
+          >
 
-          <div class="project-body">
+            <div class="project-preview preview-web">
 
-            <div class="project-top">
-              <span class="project-category">
-                Google Apps Script
-              </span>
-
-              <span class="status">
-                Funcional
-              </span>
-            </div>
-
-            <h3>Cruce BUK y GeoVictoria</h3>
-
-            <p class="project-description">
-              Automatización para comparar trabajadores, instalaciones,
-              grupos y datos de asistencia entre distintas plataformas.
-            </p>
-
-            <div class="technologies">
-              <span class="technology">Apps Script</span>
-              <span class="technology">Google Sheets</span>
-              <span class="technology">API REST</span>
-            </div>
-
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver proyecto
-              </a>
-            </div>
-
-          </div>
-        </article>
-
-        <article class="project-card" data-category="scripts">
-
-          <div class="project-preview">
-            <span class="project-icon">🕒</span>
-          </div>
-
-          <div class="project-body">
-
-            <div class="project-top">
-              <span class="project-category">
-                Google Apps Script
-              </span>
-
-              <span class="status">
-                Funcional
-              </span>
-            </div>
-
-            <h3>Cobertura de asistencia</h3>
-
-            <p class="project-description">
-              Dashboard automatizado para analizar marcas, ausencias,
-              cobertura diaria y rendimiento por trabajador e instalación.
-            </p>
-
-            <div class="technologies">
-              <span class="technology">Apps Script</span>
-              <span class="technology">GeoVictoria API</span>
-              <span class="technology">Sheets</span>
-            </div>
-
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver proyecto
-              </a>
-            </div>
-
-          </div>
-        </article>
-
-        <article class="project-card" data-category="scripts">
-
-          <div class="project-preview">
-            <span class="project-icon">🎓</span>
-          </div>
-
-          <div class="project-body">
-
-            <div class="project-top">
-              <span class="project-category">
-                Google Apps Script
-              </span>
-
-              <span class="status">
-                Automatizado
-              </span>
-            </div>
-
-            <h3>Calendario de profesores</h3>
-
-            <p class="project-description">
-              Generación semanal de calendarios, asignación de profesores,
-              formatos condicionales y sincronización de información.
-            </p>
-
-            <div class="technologies">
-              <span class="technology">Apps Script</span>
-              <span class="technology">Google Sheets</span>
-              <span class="technology">Triggers</span>
-            </div>
-
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver proyecto
-              </a>
-            </div>
-
-          </div>
-        </article>
-
-        <!-- Sitios web -->
-
-        <article class="project-card" data-category="web">
-
-          <div class="project-preview">
-            <span class="project-icon">🌐</span>
-          </div>
-
-          <div class="project-body">
-
-            <div class="project-top">
-              <span class="project-category">
+              <span class="project-category-label">
                 Sitios web
               </span>
 
-              <span class="status">
-                Publicado
-              </span>
+              <div class="browser-mockup">
+
+                <div class="browser-header">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <div class="browser-body">
+                  <div class="browser-sidebar"></div>
+
+                  <div class="browser-main">
+                    <div class="browser-line large"></div>
+                    <div class="browser-line"></div>
+
+                    <div class="browser-boxes">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
             </div>
 
-            <h3>Sitios corporativos</h3>
+            <div class="project-body">
 
-            <p class="project-description">
-              Construcción, mantención y mejora de sitios institucionales,
-              páginas informativas y formularios corporativos.
-            </p>
+              <div class="project-meta">
+                <span class="status status-active">
+                  Publicado
+                </span>
+              </div>
 
-            <div class="technologies">
-              <span class="technology">WordPress</span>
-              <span class="technology">Elementor</span>
-              <span class="technology">CSS</span>
-              <span class="technology">cPanel</span>
+              <h3>Sitios corporativos</h3>
+
+              <p>
+                Diseño, construcción y mejora de sitios web para presentar
+                servicios, marcas y contenidos empresariales.
+              </p>
+
+              <ul class="project-features">
+                <li>Diseño adaptable a celulares</li>
+                <li>Secciones y formularios personalizados</li>
+                <li>Mantención y mejoras continuas</li>
+              </ul>
+
+              <button
+                class="project-button"
+                type="button"
+                data-project-title="Sitios corporativos"
+              >
+                Explorar proyecto
+              </button>
+
             </div>
+          </article>
 
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver sitios
-              </a>
-            </div>
+          <article
+            class="project-card"
+            data-category="web"
+          >
 
-          </div>
-        </article>
+            <div class="project-preview preview-web">
 
-        <article class="project-card" data-category="web">
-
-          <div class="project-preview">
-            <span class="project-icon">📦</span>
-          </div>
-
-          <div class="project-body">
-
-            <div class="project-top">
-              <span class="project-category">
+              <span class="project-category-label">
                 Sitios web
               </span>
 
-              <span class="status">
-                Activo
+              <div class="plugin-visual">
+
+                <div class="plugin-piece piece-one"></div>
+                <div class="plugin-piece piece-two"></div>
+                <div class="plugin-piece piece-three"></div>
+
+                <div class="plugin-center">
+                  Plugin
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-body">
+
+              <div class="project-meta">
+                <span class="status status-custom">
+                  Personalizado
+                </span>
+              </div>
+
+              <h3>Plugins para WordPress</h3>
+
+              <p>
+                Desarrollo de funciones especiales para adaptar WordPress
+                a procesos que no pueden resolverse con herramientas estándar.
+              </p>
+
+              <ul class="project-features">
+                <li>Formularios y paneles personalizados</li>
+                <li>Roles y accesos diferenciados</li>
+                <li>Conexión con datos externos</li>
+              </ul>
+
+              <button
+                class="project-button"
+                type="button"
+                data-project-title="Plugins para WordPress"
+              >
+                Explorar proyecto
+              </button>
+
+            </div>
+          </article>
+
+          <article
+            class="project-card"
+            data-category="web"
+          >
+
+            <div class="project-preview preview-web">
+
+              <span class="project-category-label">
+                Sitios web
               </span>
+
+              <div class="form-visual">
+
+                <div class="form-title"></div>
+                <div class="form-input"></div>
+
+                <div class="form-row">
+                  <div class="form-input"></div>
+                  <div class="form-input"></div>
+                </div>
+
+                <div class="form-input"></div>
+                <div class="form-submit"></div>
+
+              </div>
+
             </div>
 
-            <h3>Pedido de materiales</h3>
+            <div class="project-body">
 
-            <p class="project-description">
-              Sitio para gestionar solicitudes de materiales y centralizar
-              pedidos internos desde distintas instalaciones.
-            </p>
+              <div class="project-meta">
+                <span class="status status-active">
+                  Funcional
+                </span>
+              </div>
 
-            <div class="technologies">
-              <span class="technology">WordPress</span>
-              <span class="technology">PHP</span>
-              <span class="technology">Formularios</span>
+              <h3>Portales y formularios</h3>
+
+              <p>
+                Herramientas web para recibir solicitudes, recopilar datos
+                y facilitar procesos para clientes o trabajadores.
+              </p>
+
+              <ul class="project-features">
+                <li>Registro de información</li>
+                <li>Validación de campos</li>
+                <li>Seguimiento de solicitudes</li>
+              </ul>
+
+              <button
+                class="project-button"
+                type="button"
+                data-project-title="Portales y formularios"
+              >
+                Explorar proyecto
+              </button>
+
             </div>
+          </article>
 
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver proyecto
-              </a>
-            </div>
+          <!-- Automatizaciones -->
 
-          </div>
-        </article>
+          <article
+            class="project-card"
+            data-category="automatizaciones"
+          >
 
-        <!-- Automatización -->
+            <div class="project-preview preview-automation">
 
-        <article
-          class="project-card"
-          data-category="automatizacion"
-        >
-
-          <div class="project-preview">
-            <span class="project-icon">🔄</span>
-          </div>
-
-          <div class="project-body">
-
-            <div class="project-top">
-              <span class="project-category">
+              <span class="project-category-label">
                 Automatización
               </span>
 
-              <span class="status">
-                Integración
-              </span>
+              <div class="sheet-visual">
+
+                <div class="sheet-toolbar"></div>
+
+                <div class="sheet-grid">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+              </div>
+
             </div>
 
-            <h3>Monday.com y sistemas internos</h3>
+            <div class="project-body">
 
-            <p class="project-description">
-              Integraciones para sincronizar tableros, instalaciones,
-              estados, responsables y procesos operacionales.
-            </p>
+              <div class="project-meta">
+                <span class="status status-automatic">
+                  Automatizado
+                </span>
+              </div>
 
-            <div class="technologies">
-              <span class="technology">Monday API</span>
-              <span class="technology">PHP</span>
-              <span class="technology">Webhooks</span>
+              <h3>Google Sheets y Apps Script</h3>
+
+              <p>
+                Automatización de planillas, creación de reportes,
+                cruces de información y generación de nuevas hojas.
+              </p>
+
+              <ul class="project-features">
+                <li>Procesamiento automático de datos</li>
+                <li>Reportes y paneles de seguimiento</li>
+                <li>Reducción de tareas manuales</li>
+              </ul>
+
+              <button
+                class="project-button"
+                type="button"
+                data-project-title="Google Sheets y Apps Script"
+              >
+                Explorar proyecto
+              </button>
+
             </div>
+          </article>
 
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver proyecto
-              </a>
-            </div>
+          <article
+            class="project-card"
+            data-category="automatizaciones"
+          >
 
-          </div>
-        </article>
+            <div class="project-preview preview-automation">
 
-        <article
-          class="project-card"
-          data-category="automatizacion"
-        >
-
-          <div class="project-preview">
-            <span class="project-icon">🤖</span>
-          </div>
-
-          <div class="project-body">
-
-            <div class="project-top">
-              <span class="project-category">
+              <span class="project-category-label">
                 Automatización
               </span>
 
-              <span class="status private">
-                Prototipo
-              </span>
+              <div class="monday-visual">
+
+                <div class="monday-column">
+                  <div class="monday-title"></div>
+                  <div class="monday-task"></div>
+                  <div class="monday-task short"></div>
+                </div>
+
+                <div class="monday-column">
+                  <div class="monday-title"></div>
+                  <div class="monday-task short"></div>
+                  <div class="monday-task"></div>
+                </div>
+
+                <div class="monday-column">
+                  <div class="monday-title"></div>
+                  <div class="monday-task"></div>
+                </div>
+
+              </div>
+
             </div>
 
-            <h3>Automatización de formularios</h3>
+            <div class="project-body">
 
-            <p class="project-description">
-              Proyecto en Python para leer datos desde Excel y completar
-              formularios web repetitivos con validación visual.
-            </p>
+              <div class="project-meta">
+                <span class="status status-integration">
+                  Integración
+                </span>
+              </div>
 
-            <div class="technologies">
-              <span class="technology">Python</span>
-              <span class="technology">Excel</span>
-              <span class="technology">Selenium</span>
-              <span class="technology">OCR</span>
+              <h3>Automatizaciones en Monday</h3>
+
+              <p>
+                Configuración de alertas, actualizaciones automáticas
+                y flujos para ordenar el seguimiento de procesos.
+              </p>
+
+              <ul class="project-features">
+                <li>Alertas y recordatorios</li>
+                <li>Actualización de estados</li>
+                <li>Conexión con otros sistemas</li>
+              </ul>
+
+              <button
+                class="project-button"
+                type="button"
+                data-project-title="Automatizaciones en Monday"
+              >
+                Explorar proyecto
+              </button>
+
             </div>
+          </article>
 
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver proyecto
-              </a>
-            </div>
+          <article
+            class="project-card"
+            data-category="automatizaciones"
+          >
 
-          </div>
-        </article>
+            <div class="project-preview preview-automation">
 
-        <!-- Diseño -->
-
-        <article class="project-card" data-category="diseno">
-
-          <div class="project-preview">
-            <span class="project-icon">🎨</span>
-          </div>
-
-          <div class="project-body">
-
-            <div class="project-top">
-              <span class="project-category">
-                Diseño y marketing
-              </span>
-
-              <span class="status">
-                Completado
-              </span>
-            </div>
-
-            <h3>Identidad visual Grupo TAQ</h3>
-
-            <p class="project-description">
-              Desarrollo y aplicación de identidad visual en papelería,
-              uniformes, credenciales, mochilas y materiales corporativos.
-            </p>
-
-            <div class="technologies">
-              <span class="technology">Branding</span>
-              <span class="technology">CorelDRAW</span>
-              <span class="technology">Mockups</span>
-            </div>
-
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver proyecto
-              </a>
-            </div>
-
-          </div>
-        </article>
-
-        <article class="project-card" data-category="diseno">
-
-          <div class="project-preview">
-            <span class="project-icon">📱</span>
-          </div>
-
-          <div class="project-body">
-
-            <div class="project-top">
-              <span class="project-category">
-                Diseño y marketing
+              <span class="project-category-label">
+                Automatización
               </span>
 
-              <span class="status">
-                Completado
+              <div class="integration-visual">
+
+                <div class="integration-node">A</div>
+
+                <div class="integration-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <div class="integration-node">B</div>
+
+              </div>
+
+            </div>
+
+            <div class="project-body">
+
+              <div class="project-meta">
+                <span class="status status-integration">
+                  Conectado
+                </span>
+              </div>
+
+              <h3>Integración de plataformas</h3>
+
+              <p>
+                Conexión de información entre distintas herramientas
+                para evitar duplicación y mantener datos actualizados.
+              </p>
+
+              <ul class="project-features">
+                <li>Sincronización de información</li>
+                <li>Cruces y validaciones automáticas</li>
+                <li>Centralización de datos</li>
+              </ul>
+
+              <button
+                class="project-button"
+                type="button"
+                data-project-title="Integración de plataformas"
+              >
+                Explorar proyecto
+              </button>
+
+            </div>
+          </article>
+
+          <!-- Sistemas internos -->
+
+          <article
+            class="project-card"
+            data-category="sistemas"
+          >
+
+            <div class="project-preview preview-system">
+
+              <span class="project-category-label">
+                Sistemas internos
               </span>
+
+              <div class="dashboard-visual">
+
+                <div class="dashboard-sidebar">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <div class="dashboard-content">
+
+                  <div class="dashboard-header"></div>
+
+                  <div class="dashboard-metrics">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="dashboard-table">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                </div>
+
+              </div>
+
             </div>
 
-            <h3>Contenido para redes sociales</h3>
+            <div class="project-body">
 
-            <p class="project-description">
-              Diseño de publicaciones, piezas corporativas y propuestas
-              visuales para LinkedIn y canales internos.
-            </p>
+              <div class="project-meta">
+                <span class="status status-private">
+                  Uso interno
+                </span>
+              </div>
 
-            <div class="technologies">
-              <span class="technology">Marketing</span>
-              <span class="technology">Redes sociales</span>
-              <span class="technology">Diseño gráfico</span>
+              <h3>Intranet corporativa</h3>
+
+              <p>
+                Espacio centralizado para reunir sistemas, información
+                y herramientas utilizadas por distintas áreas.
+              </p>
+
+              <ul class="project-features">
+                <li>Accesos según tipo de usuario</li>
+                <li>Herramientas en un solo lugar</li>
+                <li>Procesos internos centralizados</li>
+              </ul>
+
+              <button
+                class="project-button"
+                type="button"
+                data-project-title="Intranet corporativa"
+              >
+                Explorar proyecto
+              </button>
+
+            </div>
+          </article>
+
+          <article
+            class="project-card"
+            data-category="sistemas"
+          >
+
+            <div class="project-preview preview-system">
+
+              <span class="project-category-label">
+                Sistemas internos
+              </span>
+
+              <div class="people-visual">
+
+                <div class="people-row">
+                  <span class="people-avatar"></span>
+
+                  <div>
+                    <span class="people-line large"></span>
+                    <span class="people-line"></span>
+                  </div>
+
+                  <span class="people-status"></span>
+                </div>
+
+                <div class="people-row">
+                  <span class="people-avatar"></span>
+
+                  <div>
+                    <span class="people-line large"></span>
+                    <span class="people-line"></span>
+                  </div>
+
+                  <span class="people-status"></span>
+                </div>
+
+                <div class="people-row">
+                  <span class="people-avatar"></span>
+
+                  <div>
+                    <span class="people-line large"></span>
+                    <span class="people-line"></span>
+                  </div>
+
+                  <span class="people-status"></span>
+                </div>
+
+              </div>
+
             </div>
 
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver proyecto
-              </a>
+            <div class="project-body">
+
+              <div class="project-meta">
+                <span class="status status-private">
+                  Gestión
+                </span>
+              </div>
+
+              <h3>Sistema de personal</h3>
+
+              <p>
+                Herramienta para centralizar registros, solicitudes
+                y procesos relacionados con trabajadores.
+              </p>
+
+              <ul class="project-features">
+                <li>Registro de información</li>
+                <li>Solicitudes y revisiones</li>
+                <li>Seguimiento por responsables</li>
+              </ul>
+
+              <button
+                class="project-button"
+                type="button"
+                data-project-title="Sistema de personal"
+              >
+                Explorar proyecto
+              </button>
+
+            </div>
+          </article>
+
+          <article
+            class="project-card"
+            data-category="sistemas"
+          >
+
+            <div class="project-preview preview-system">
+
+              <span class="project-category-label">
+                Sistemas internos
+              </span>
+
+              <div class="warehouse-visual">
+
+                <div class="warehouse-shelf">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <div class="warehouse-shelf">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <div class="warehouse-counter">
+                  <strong>24</strong>
+                  <small>solicitudes</small>
+                </div>
+
+              </div>
+
             </div>
 
-          </div>
-        </article>
+            <div class="project-body">
 
-        <!-- Infraestructura -->
+              <div class="project-meta">
+                <span class="status status-active">
+                  Operativo
+                </span>
+              </div>
 
-        <article
-          class="project-card"
-          data-category="infraestructura"
+              <h3>Bodega y pedidos de materiales</h3>
+
+              <p>
+                Sistema para recibir, organizar y revisar solicitudes
+                de materiales desde distintas áreas o instalaciones.
+              </p>
+
+              <ul class="project-features">
+                <li>Registro de pedidos</li>
+                <li>Control de estados</li>
+                <li>Seguimiento de entrega</li>
+              </ul>
+
+              <button
+                class="project-button"
+                type="button"
+                data-project-title="Bodega y pedidos de materiales"
+              >
+                Explorar proyecto
+              </button>
+
+            </div>
+          </article>
+
+          <!-- Diseño -->
+
+          <article
+            class="project-card"
+            data-category="diseno"
+          >
+
+            <div class="project-preview preview-design">
+
+              <span class="project-category-label">
+                Diseño y productos
+              </span>
+
+              <div class="brand-visual">
+
+                <div class="brand-logo">
+                  MARCA
+                </div>
+
+                <div class="brand-palette">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <div class="brand-lines">
+                  <span></span>
+                  <span></span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-body">
+
+              <div class="project-meta">
+                <span class="status status-completed">
+                  Completado
+                </span>
+              </div>
+
+              <h3>Identidad de marca</h3>
+
+              <p>
+                Creación y aplicación de identidades visuales coherentes
+                para empresas, proyectos y servicios.
+              </p>
+
+              <ul class="project-features">
+                <li>Logotipo y versiones</li>
+                <li>Colores y tipografías</li>
+                <li>Manual y aplicaciones de marca</li>
+              </ul>
+
+              <button
+                class="project-button"
+                type="button"
+                data-project-title="Identidad de marca"
+              >
+                Explorar proyecto
+              </button>
+
+            </div>
+          </article>
+
+          <article
+            class="project-card"
+            data-category="diseno"
+          >
+
+            <div class="project-preview preview-design">
+
+              <span class="project-category-label">
+                Diseño y productos
+              </span>
+
+              <div class="social-visual">
+
+                <div class="social-post">
+                  <div class="social-header">
+                    <span></span>
+
+                    <div>
+                      <i></i>
+                      <i></i>
+                    </div>
+                  </div>
+
+                  <div class="social-image"></div>
+                  <div class="social-text"></div>
+                </div>
+
+                <div class="social-post offset">
+                  <div class="social-image secondary"></div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-body">
+
+              <div class="project-meta">
+                <span class="status status-completed">
+                  Digital
+                </span>
+              </div>
+
+              <h3>Marketing y contenido visual</h3>
+
+              <p>
+                Diseño de publicaciones, campañas, presentaciones
+                y piezas para comunicación digital.
+              </p>
+
+              <ul class="project-features">
+                <li>Contenido para redes sociales</li>
+                <li>Campañas y piezas corporativas</li>
+                <li>Presentaciones e informativos</li>
+              </ul>
+
+              <button
+                class="project-button"
+                type="button"
+                data-project-title="Marketing y contenido visual"
+              >
+                Explorar proyecto
+              </button>
+
+            </div>
+          </article>
+
+          <article
+            class="project-card"
+            data-category="diseno"
+          >
+
+            <div class="project-preview preview-design">
+
+              <span class="project-category-label">
+                Diseño y productos
+              </span>
+
+              <div class="awards-visual">
+
+                <div class="award medal">
+                  <span></span>
+                </div>
+
+                <div class="award plaque">
+                  <span>Premio</span>
+                </div>
+
+                <div class="award stamp">
+                  RG
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-body">
+
+              <div class="project-meta">
+                <span class="status status-custom">
+                  Personalizado
+                </span>
+              </div>
+
+              <h3>Productos corporativos y premiación</h3>
+
+              <p>
+                Diseño y confección de productos personalizados para
+                reconocimiento, presentación e identidad corporativa.
+              </p>
+
+              <ul class="project-features">
+                <li>Galvanos, medallas y placas</li>
+                <li>Timbres personalizados</li>
+                <li>Artículos y aplicaciones corporativas</li>
+              </ul>
+
+              <button
+                class="project-button"
+                type="button"
+                data-project-title="Productos corporativos y premiación"
+              >
+                Explorar proyecto
+              </button>
+
+            </div>
+          </article>
+
+        </div>
+
+        <div
+          class="empty-state"
+          id="empty-state"
+          hidden
         >
+          No hay proyectos disponibles para esta categoría.
+        </div>
 
-          <div class="project-preview">
-            <span class="project-icon">🖥️</span>
+      </div>
+    </section>
+
+    <!-- Sobre mí -->
+
+    <section class="about section" id="sobre-mi">
+      <div class="container about-grid">
+
+        <div class="about-introduction">
+
+          <span class="section-label">
+            Sobre mí
+          </span>
+
+          <h2>
+            Tecnología, procesos y diseño en una misma solución.
+          </h2>
+
+          <p>
+            Mi trabajo combina desarrollo web, automatización, análisis
+            de procesos y diseño. Esto me permite comprender una necesidad
+            desde distintos puntos de vista y crear soluciones prácticas
+            para empresas y equipos de trabajo.
+          </p>
+
+          <p>
+            Más que aplicar una herramienta específica, busco entender
+            cómo funciona el proceso, qué problema debe resolverse
+            y cuál es la forma más simple de implementarlo.
+          </p>
+
+        </div>
+
+        <div class="about-list">
+
+          <div class="about-item">
+            <span>01</span>
+
+            <div>
+              <h3>Entender la necesidad</h3>
+
+              <p>
+                Analizar el problema, los usuarios y el proceso actual.
+              </p>
+            </div>
           </div>
 
-          <div class="project-body">
+          <div class="about-item">
+            <span>02</span>
 
-            <div class="project-top">
-              <span class="project-category">
-                Infraestructura TI
-              </span>
+            <div>
+              <h3>Diseñar la solución</h3>
 
-              <span class="status">
-                Gestión
-              </span>
+              <p>
+                Crear una propuesta clara, simple y adaptada al contexto.
+              </p>
             </div>
+          </div>
 
-            <h3>Hosting y correo corporativo</h3>
+          <div class="about-item">
+            <span>03</span>
 
-            <p class="project-description">
-              Administración de hosting, cPanel, cuentas IMAP, DNS,
-              capacidad de almacenamiento y resolución de incidencias.
+            <div>
+              <h3>Implementar y mejorar</h3>
+
+              <p>
+                Construir la herramienta y ajustarla según su uso real.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contacto -->
+
+    <section class="contact section" id="contacto">
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div class="contact-content">
+
+            <span class="contact-label">
+              Trabajemos juntos
+            </span>
+
+            <h2>
+              ¿Tienes una idea o proceso que mejorar?
+            </h2>
+
+            <p>
+              Conversemos sobre tu sitio web, automatización,
+              sistema interno o proyecto de diseño.
             </p>
 
-            <div class="technologies">
-              <span class="technology">cPanel</span>
-              <span class="technology">DNS</span>
-              <span class="technology">IMAP</span>
-              <span class="technology">SMTP</span>
-            </div>
+          </div>
 
-            <div class="project-actions">
-              <a class="project-link primary" href="#">
-                Ver experiencia
-              </a>
-            </div>
+          <div class="contact-actions">
+
+            <a
+              class="button button-light"
+              href="mailto:tu-correo@ejemplo.cl"
+            >
+              Enviar correo
+            </a>
+
+            <a
+              class="button button-outline-light"
+              href="#proyectos"
+            >
+              Revisar proyectos
+            </a>
 
           </div>
-        </article>
 
-      </section>
+        </div>
 
-    </div>
+      </div>
+    </section>
+
   </main>
 
-  <section class="contact" id="contacto">
-    <div class="container">
+  <footer class="site-footer">
+    <div class="container footer-content">
 
-      <div class="contact-box">
+      <div>
+        <strong>Rodrigo Gómez</strong>
 
-        <div>
-          <h2>¿Tienes un proyecto en mente?</h2>
+        <span>
+          Soluciones digitales y creativas
+        </span>
+      </div>
 
-          <p>
-            Puedo trabajar en sistemas internos, automatización de procesos,
-            integraciones, sitios web y soluciones visuales.
-          </p>
-        </div>
+      <p>
+        © <span id="current-year"></span> Todos los derechos reservados.
+      </p>
 
-        <div class="contact-action">
-          <a
-            class="button button-primary"
-            href="mailto:tu-correo@ejemplo.cl"
-          >
-            Contactar
-          </a>
-        </div>
+    </div>
+  </footer>
+
+  <!-- Modal de proyecto -->
+
+  <div
+    class="modal"
+    id="project-modal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-overlay" data-close-modal></div>
+
+    <div
+      class="modal-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+
+      <button
+        class="modal-close"
+        type="button"
+        aria-label="Cerrar ventana"
+        data-close-modal
+      >
+        ×
+      </button>
+
+      <span class="modal-label">
+        Proyecto
+      </span>
+
+      <h2 id="modal-title">
+        Nombre del proyecto
+      </h2>
+
+      <p>
+        Esta sección podrá incluir próximamente imágenes,
+        descripción del proceso, resultados, enlaces, videos
+        o una demostración interactiva.
+      </p>
+
+      <div class="modal-placeholder">
+
+        <span>Vista detallada del proyecto</span>
+
+        <small>
+          Aquí podrás incorporar el contenido real cuando tengas
+          listas las imágenes y descripciones.
+        </small>
 
       </div>
 
+      <button
+        class="button button-primary modal-action"
+        type="button"
+        data-close-modal
+      >
+        Entendido
+      </button>
+
     </div>
-  </section>
 
-  <footer>
-    © 2026 Rodrigo Gómez · Portafolio de proyectos
-  </footer>
+  </div>
 
-  <script>
-    const filterButtons = document.querySelectorAll(".filter-button");
-    const projectCards = document.querySelectorAll(".project-card");
-
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const selectedCategory = button.dataset.filter;
-
-        filterButtons.forEach((item) => {
-          item.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        projectCards.forEach((card) => {
-          const cardCategory = card.dataset.category;
-
-          const shouldShow =
-            selectedCategory === "todos" ||
-            cardCategory === selectedCategory;
-
-          card.classList.toggle("hidden", !shouldShow);
-        });
-      });
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
