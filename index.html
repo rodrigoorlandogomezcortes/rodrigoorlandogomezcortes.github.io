@@ -11,18 +11,20 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-content">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <img
-          class="header-logo"
-          src="mi-logo.svg"
-          alt="Logo de Rodrigo Gómez"
-          width="75"
-          height="55"
-        >
+    <header class="site-header">
+      <div class="container header-content">
+      <div class="brand">
+        <a class="brand-logo-link" href="#inicio" aria-label="Ir al inicio">
+          <img
+            class="header-logo"
+            src="mi-logo.svg"
+            alt="Logo de Rodrigo Gómez"
+            width="75"
+            height="55"
+          >
+        </a>
         <span class="brand-text">Rodrigo Gómez</span>
-      </a>
+      </div>
 
       <button
         class="menu-toggle"
@@ -156,6 +158,9 @@
         <div class="services-grid">
           <button class="service-card" type="button" data-service-filter="web">
             <span class="service-number">01</span>
+            <div class="service-visual">
+              <img src="imagenes/desarrollo-web.webp" alt="Vista de desarrollo web">
+            </div>
             <div class="service-icon" aria-hidden="true">WEB</div>
             <h3>Desarrollo web</h3>
             <p>
@@ -167,8 +172,11 @@
 
           <button class="service-card" type="button" data-service-filter="automatizaciones">
             <span class="service-number">02</span>
+            <div class="service-visual">
+              <img src="imagenes/integraciones.webp" alt="Vista de integraciones y automatizaciones">
+            </div>
             <div class="service-icon" aria-hidden="true">AUTO</div>
-            <h3>Automatizaciones</h3>
+            <h3>Integraciones</h3>
             <p>
               Flujos automáticos, cruces de información, alertas, reportes
               e integraciones entre plataformas.
