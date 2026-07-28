@@ -1305,10 +1305,12 @@ img {
 }
 
 .brand-logo {
-  color: #3d302b;
-  font-size: 24px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
+  width: auto;
+  max-width: 75px;
+  height: auto;
+  max-height: 55px;
+  display: block;
+  object-fit: contain;
 }
 
 .brand-palette {
