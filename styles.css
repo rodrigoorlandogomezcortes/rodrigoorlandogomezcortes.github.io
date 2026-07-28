@@ -1306,9 +1306,8 @@ img {
 
 .brand-logo {
   width: auto;
+  height: 55px;
   max-width: 75px;
-  height: auto;
-  max-height: 55px;
   display: block;
   object-fit: contain;
 }
